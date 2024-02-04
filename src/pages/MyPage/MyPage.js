@@ -12,9 +12,9 @@ export default function MyPage() {
   } = useProfile();
 
   // redux 사용
-  const items = useSelector((state) => state.cart.items);
-
-  console.log(items);
+  // const username = useSelector((state) => state.user.username);
+  // const password = useSelector((state) => state.user.password);
+  // const nick = useSelector((state) => state.user.nickname);
 
   const nicknameRef = useRef(null);
 

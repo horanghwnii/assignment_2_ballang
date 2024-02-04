@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addItem, removeItem } from '../../store/reducers/cart.reducer';
+import {
+  addItem,
+  forceRemoveItem,
+  removeItem,
+} from '../../store/reducers/cart.reducer';
 import { Link } from 'react-router-dom';
 
 export default function CartItem({
@@ -20,6 +24,10 @@ export default function CartItem({
 
   const handleClickDecreaseItem = () => {
     dispatch(removeItem({ id }));
+  };
+
+  const handleClickForceRemoveItem = () => {
+    dispatch(forceRemoveItem({ id }));
   };
 
   return (
@@ -57,6 +65,13 @@ export default function CartItem({
               bg-slate-950 text-white '
             >
               빼기
+            </button>
+            <button
+              onClick={handleClickForceRemoveItem}
+              className='flex-1 text-center w-full border border-red-700 px-3
+              bg-red-700 text-white '
+            >
+              삭제
             </button>
           </div>
         </div>

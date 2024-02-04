@@ -65,11 +65,22 @@ const cartSlice = createSlice({
         state.totalItems -= amount;
       }
     },
+    forceRemoveItem(state, action) {
+      const { id } = action.payload;
+
+      const findIndex = state.items.find((item) => item.id === id);
+
+      if (findIndex) {
+        const newItems = state.items.filter((item) => item.id !== id);
+        state.items = newItems;
+      }
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { totalItems, addItem, removeItem } = cartSlice.actions;
+export const { totalItems, addItem, removeItem, forceRemoveItem } =
+  cartSlice.actions;
 
 // updateExperience(state, action) {
 //   const { id, data } = action;
