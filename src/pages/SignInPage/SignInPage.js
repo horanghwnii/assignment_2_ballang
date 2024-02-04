@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/auth.context';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function SignInPage() {
   const navigate = useNavigate();
 
   const { signIn } = useAuth();
+
+  const id = useSelector((state) => state.user.username);
+  const pw = useSelector((state) => state.user.password);
 
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -17,7 +21,7 @@ export default function SignInPage() {
       return alert('아이디와 비밀번호를 입력해주세요.');
     }
 
-    if (username === 'udemy' && password === 'udemy') {
+    if (username === id && password === pw) {
       signIn();
       navigate('/');
     } else {
@@ -26,7 +30,7 @@ export default function SignInPage() {
   };
 
   return (
-    <div>
+    <div className='mt-32'>
       <form
         className='w-80 flex flex-col gap5 mx-auto gap-3'
         onSubmit={handleSubmit}

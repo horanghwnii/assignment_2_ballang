@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function DefaultContentLayout() {
   return (
-    <div className='flex justify-center m-28'>
+    <div className='flex justify-center items-center flex-grow'>
       <Outlet />
     </div>
   );

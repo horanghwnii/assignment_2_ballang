@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   addItem,
   forceRemoveItem,
@@ -17,6 +17,7 @@ export default function CartItem({
   salePercent,
 }) {
   const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.items);
 
   const handleClickIncreaseItem = () => {
     dispatch(addItem({ id }));
@@ -27,7 +28,8 @@ export default function CartItem({
   };
 
   const handleClickForceRemoveItem = () => {
-    dispatch(forceRemoveItem({ id }));
+    const forceTargetItem = items.find((item) => item.id === id);
+    dispatch(forceRemoveItem({ id, amount: forceTargetItem.count }));
   };
 
   return (

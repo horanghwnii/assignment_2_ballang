@@ -66,13 +66,14 @@ const cartSlice = createSlice({
       }
     },
     forceRemoveItem(state, action) {
-      const { id } = action.payload;
+      const { id, amount } = action.payload;
 
       const findIndex = state.items.find((item) => item.id === id);
 
       if (findIndex) {
         const newItems = state.items.filter((item) => item.id !== id);
         state.items = newItems;
+        state.totalItems -= amount;
       }
     },
   },

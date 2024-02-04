@@ -13,8 +13,6 @@ const getProducts = async () => {
   const response = await fetch(endpoint, options);
   const data = await response.json();
 
-  console.log(data);
-
   return data;
 };
 

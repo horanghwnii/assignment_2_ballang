@@ -7,29 +7,23 @@ import SignInPage from './pages/SignInPage';
 import CartPage from './pages/CartPage';
 import DefaultContentLayout from './layouts/DefaultContentLayout/DefaultContentLayout';
 import { AuthProvider } from './contexts/auth.context';
-import { ProfileProvider } from './contexts/profile.context';
-import { Provider } from 'react-redux';
-import store from './store';
 
 function App() {
   return (
     <AuthProvider>
-      <ProfileProvider>
-        <Routes>
-          <Route element={<DefaultLayout />}>
-            <Route element={<DefaultContentLayout />}>
-              <Route path='/' element={<HomePage />} />
-              <Route
-                path='/product-detail/:id'
-                element={<ProductDetailPage />}
-              />
-              <Route path='/user-info' element={<MyPage />} />
-              <Route path='/sign-in' element={<SignInPage />} />
-              <Route path='/cart' element={<CartPage />} />
-            </Route>
+      {/* <ProfileProvider> */}
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          <Route element={<DefaultContentLayout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/product-detail/:id' element={<ProductDetailPage />} />
+            <Route path='/cart' element={<CartPage />} />
+            <Route path='/user-info' element={<MyPage />} />
+            <Route path='/sign-in' element={<SignInPage />} />
           </Route>
-        </Routes>
-      </ProfileProvider>
+        </Route>
+      </Routes>
+      {/* </ProfileProvider> */}
     </AuthProvider>
   );
 }
