@@ -4,7 +4,20 @@
 
 ## 요구사항
 
-1. 다음의 페이지들이 있어야 합니다.
+1. 필수 기술스택
+
+   - React (CRA) (🅾️)
+   - React Router (🅾️)
+   - Context API (인증 정보 한정) (🅾️)
+   - Redux (Toolkit, 장바구니와 프로필 정보 한정)
+     - npm install @reduxjs/toolkit
+     - npm install react-redux
+   - 스타일링은 다음 중 하나 또는 그 이상의 조합으로 구성.
+     - Tailwind CSS (🅾️) 해볼라궁
+     - CSS in JS (Styled Components)
+     - CSS Module (Sass 사용 가능)
+
+2. 다음의 페이지들이 있어야 합니다.
 
    1. HomePage
 
@@ -32,7 +45,7 @@
       - 카트 페이지 내 목록에서는 상품을 카트에서 제거할 수 있습니다.
       - 카트 페이지 내 목록에서는 상품이 담긴 수량을 조정할 수 있습니다.
 
-2. 다음과 같은 레이아웃 구성이 있어야 합니다.
+3. 다음과 같은 레이아웃 구성이 있어야 합니다.
    1. Layout 컴포넌트를 사용해서 전체 페이지에서 Header와 Footer가 보여야 합니다.
    2. 로그인을 했을 경우에는 Header에서, 로그인한 사용자의 아이디와 로그아웃 버튼이 보여야 합니다.
    3. 로그인을 하지 않았을 경우에는 SignInPage로 이동시켜주는 로그인하기 버튼이 보여야 합니다.
