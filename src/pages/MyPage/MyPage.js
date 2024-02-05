@@ -24,6 +24,8 @@ export default function MyPage() {
 
     const nickname = nicknameRef.current.value;
     dispatch(updateNickname({ nickname }));
+
+    setIsChangeNick(!isChangeNick);
   };
 
   const handleClickChangePassword = () => {
@@ -33,6 +35,8 @@ export default function MyPage() {
 
     const password = passwordRef.current.value;
     dispatch(updatePassword({ password }));
+
+    setIsChangePassword(!isChangePassword);
   };
 
   return (

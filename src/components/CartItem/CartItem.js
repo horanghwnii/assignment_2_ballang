@@ -34,7 +34,7 @@ export default function CartItem({
 
   return (
     <>
-      <div className='mt-10  min-w-[265px] max-w-[265px] rounded-sm overflow-hidden shadow-lg'>
+      <div className='mt-10 mb-40 min-w-[265px] max-w-[265px] rounded-sm overflow-hidden shadow-lg'>
         <div>
           <Link to={`/product-detail/${id}`}>
             <img src={img} alt={brandNm} className='h-96 w-full' />

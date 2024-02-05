@@ -43,9 +43,11 @@ export default function Header() {
           className='inline absolute right-10'
         >
           <GiShoppingBag size={30} />
-          <p className='absolute right-[8px] top-[10px] text-white text-xs'>
-            {totalItems}
-          </p>
+          {isLoggedIn && (
+            <p className='absolute right-[8px] top-[10px] text-white text-xs'>
+              {totalItems}
+            </p>
+          )}
         </Link>
       </div>
       <div>
